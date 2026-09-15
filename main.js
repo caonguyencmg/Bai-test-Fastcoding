@@ -42,3 +42,55 @@ mobileOverlay.addEventListener("click", hideMenu);
 document.querySelectorAll(".mobile-menu a").forEach((item) => {
   item.addEventListener("click", hideMenu);
 });
+
+const testimonialMain = document.querySelector(".testimonial-main");
+var isReverse = false;
+
+$(".next").click(function () {
+  testimonialMain.classList.remove("slide-next", "slide-prev");
+  void testimonialMain.offsetWidth;
+  if (isReverse) {
+    isReverse = false;
+    testimonialMain.classList.remove("reverse");
+    testimonialMain.classList.add("slide-next");
+    $(".testimonial-main .testimonial-description").text(
+      "We make sure you have a fine distance with the sickness. We make you never lose hope.",
+    );
+    $(".testimonial-main .testimonial-description1").text(
+      "We make sure you have with the sickness.",
+    );
+  } else {
+    isReverse = true;
+    $(".testimonial-main .testimonial-description").text(
+      "We provide you with the best care and support throughout your journey.",
+    );
+    $(".testimonial-main .testimonial-description1").text("");
+    testimonialMain.classList.add("reverse");
+    testimonialMain.classList.add("slide-next");
+  }
+});
+
+$(".prev").click(function () {
+  testimonialMain.classList.remove("slide-next", "slide-prev");
+  void testimonialMain.offsetWidth;
+  if (isReverse) {
+    isReverse = false;
+    testimonialMain.classList.remove("reverse");
+    testimonialMain.classList.add("slide-prev");
+    $(".testimonial-main .testimonial-description").text(
+      "We make sure you have a fine distance with the sickness. We make you never lose hope.",
+    );
+    $(".testimonial-main .testimonial-description1").text(
+      "We make sure you have with the sickness.",
+    );
+  } else {
+    isReverse = true;
+    $(".testimonial-main .testimonial-description").text(
+      "We provide you with the best care and support throughout your journey.",
+    );
+    $(".testimonial-main .testimonial-description1").text("");
+
+    testimonialMain.classList.add("reverse");
+    testimonialMain.classList.add("slide-prev");
+  }
+});
